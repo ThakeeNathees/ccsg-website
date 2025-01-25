@@ -1,0 +1,272 @@
+
+/* font-family: 'Montserrat', sans-serif; */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+/*****************************************************************************
+ * CSS Common                                                                *
+ *****************************************************************************/
+
+:root {
+    --color-gold: #ab8d4e;
+    --color-light-gold: #d4b26b;
+    --color-dark-gold: #7a5e2e;
+    --color-black: #1b1b1b;
+
+    --color-curtin-black: #161c21;
+    --color-curtin-yellow: #ba9e46;
+    --color-white: rgb(236, 236, 236);
+
+    --header-height: 90px;
+    --profile-circle-size: 100px;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--color-white);
+}
+
+body {
+    background-color: var(--color-black);
+}
+
+p, ul, li {
+    font-size: 1.2rem;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header {
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-gold);
+    transition: all 0.2s;
+    transition-property: transform, box-shadow;
+}
+
+.header.stick {
+    transform: translateY(-3px);
+}
+
+.header h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+}
+
+.header h2 {
+    color: var(--color-white);
+    font-size: .5rem;
+}
+
+/*****************************************************************************
+ * Our Vision Section                                                        *
+ *****************************************************************************/
+
+#no-scroll-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('../img/curtin.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.no-scroll-image-overlay {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-gold);
+    opacity: .7;
+}
+
+
+/*****************************************************************************
+ * Members                                                                   *
+ *****************************************************************************/
+
+.member-card {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--color-dark-gold);
+    margin-bottom: 30px;
+}
+
+
+.profile-circle {
+    aspect-ratio: 1;
+    width: var(--profile-circle-size);
+    height: var(--profile-circle-size);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: linear-gradient(to right, var(--color-dark-gold), var(--color-light-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 40px;
+}
+
+.profile-circle img {
+    border-radius: 50%;
+    width: 95%;
+    height: 95%;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    color: var(--color-light-gold)
+}
+
+.member-title {
+    font-size: 1.2rem;
+    color: var(--color-dark-gold);
+}
+
+.member-about {
+    margin-top: 10px;
+}
+
+.about-next-line {
+    display: none;
+}
+
+/*****************************************************************************
+ * Inline Styling Classes                                                    *
+ *****************************************************************************/
+
+.no-disp {
+    display: none;
+}
+
+.container-title {
+    font-size: 2rem;
+    color: var(--color-light-gold);
+    margin-bottom: 50px;
+}
+
+.container-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-dark-gold);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-dgold {
+    color: var(--color-dark-gold);
+}
+
+.color-lgold {
+    color: var(--color-light-gold);
+}
+
+.color-white {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mg-t0 {
+    margin-top: 10px
+}
+
+.mg-t1 {
+    margin-top: 20px
+}
+
+.mg-t2 {
+    margin-top: 50px
+}
+
+.mg-t3 {
+    margin-top: 100px
+}
+
+.mg-b0 {
+    margin-bottom: 10px
+}
+
+.mg-b1 {
+    margin-bottom: 20px
+}
+
+.mg-b2 {
+    margin-bottom: 50px
+}
+
+.mg-b3 {
+    margin-bottom: 100px
+}
+
+/*****************************************************************************
+ * Media queries                                                             *
+ *****************************************************************************/
+
+@media screen and (max-width: 1120px) {
+    .container { width: 90%; }
+}
+
+@media screen and (max-width: 850px) {
+    .container { width: 100%; padding: 0 30px; }
+}
+
+@media screen and (max-width: 580px) {
+
+    :root {
+        --profile-circle-size: 80px;
+    }
+
+    .container-subtitle { font-size: 1.2rem; }
+    .container-title { font-size: 1.5rem; }
+
+    .profile-circle { margin-right: 20px; }
+    .about-next-line { display: block; }
+    .about-same-line { display: none; }
+    .member-name { font-size: .9rem; }
+    .member-title { font-size: .9rem; }
+    .member-about { font-size: .8rem; }
+
+    p, ul, li {
+        font-size: 1rem;
+    }
+
+    #no-scroll-image {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+}
+

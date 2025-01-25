@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vue-cdn@3.2.45.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>CCSG Website</title>
+</head>
+
+<body id="app">
+
+    <div class="header">
+        <!-- TODO: This should be a logo -->
+        <span class="text-center">
+            <h1>CCSG</h1>
+            <h2>Curtin Colombo Student Guild</h2>
+        </span>
+    </div>
+
+
+    <!-- Leave space for the header and body -->
+    <div style="margin-top: calc(var(--header-height) + 50px);"></div>
+    <br>
+
+    <!-- Intro to the Guild -->
+    <div id="intro" class="container">
+        <div class="text-center">
+            <h3 class="container-subtitle">WE ARE</h3>
+            <h1 class="container-title"> CURTIN COLOMBO STUDENT GUILD </h1>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum mollitia tenetur
+                repellendus consequuntur culpa exercitationem eveniet commodi odit sed!
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eum, officia natus
+                reprehende rit iure impedit nobis, maxime porro voluptatibus nemo rem deserunt corrupti
+                vel in totam repudia ndae eligendi. Officia maiores, pariatur voluptatibus dolor rem
+                totam, veritatis nisi suscipit qua si ipsam illum harum adipisci illo est saepe incidunt
+                eos voluptas commodi?
+            </p>
+        </div>
+    </div>
+
+
+    <!-- No scroll image -->
+    <div id="no-scroll-image" class="mg-t3">
+        <div class="no-scroll-image-overlay"></div>
+        <div class="center" style="height: 100%; max-width: 1100px; margin: 0 auto; padding: 20px;">
+            <p style="z-index: 10;">
+                Our Vision: <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iusto mollitia
+                cumque saepe tempora natus suscipit reiciendis officiis? Architecto, maiores est?
+                Quisquam, esse fuga nobis vel molestiae deserunt excepturi voluptatem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nesciunt?
+            </p>
+        </div>
+    </div>
+
+    <!-- Board Members -->
+     <div class="container mg-t3">
+        <div class="text-center">
+            <h3 class="container-subtitle">THIS IS</h3>
+            <h1 class="container-title">OUR MEMBERS 2025</h1>
+        </div>
+
+        <div class="member-cards">
+            <div v-once v-for="(member, i) in board_members" :key="member.name" class="member-card">
+                <div>
+                    <div style="display: flex; align-items: center;">
+                        <div class="center">
+                            <div class="profile-circle">
+                                <img :src="`./img/member/${member.image_name}`">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="member-name">{{member.name}}</p>
+                            <h3 class="member-title">{{member.title}}</h3>
+                            <p class="member-about about-same-line">{{member.about}}</p>
+                        </div>
+                    </div>
+                    <p class="member-about about-next-line">{{member.about}}</p>
+                </div>
+            </div>
+
+        </div>
+     </div>
+
+
+    <!-- <div style="margin: calc(var(--header-height) + 20px) 30px 10px; background-color: red; height: 200vh"> -->
+    <div style="margin-top: 100px"></div>
+
+    </div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
